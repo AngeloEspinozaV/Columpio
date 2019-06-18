@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.016621327639962925 -0.9910977771289408 -0.13209438912216262 2.8934557057564443
-  position -1.276694765301627 1.0000622630445666 -2.1773867706829133
+  orientation -0.9917758682105967 -0.125561175868623 -0.024799563496277793 0.39315166357202336
+  position -0.5387534446852685 1.6391919779685855 2.759356391740311
 }
 TexturedBackground {
 }
@@ -32,7 +32,7 @@ Solid {
           ]
         }
         Transform {
-          translation 0 0.347 0.4
+          translation 0 0.347 0.5
           rotation 1 0 0 -0.52
           children [
             Shape {
@@ -45,11 +45,7 @@ Solid {
           translation 0 0.34 0.2
           children [
             Shape {
-              appearance DEF COLOR_MIDDLE PBRAppearance {
-                baseColor 0.5333333333333333 0.5411764705882353 0.5215686274509804
-                roughness 1
-                metalness 0
-              }
+              appearance USE COLOR_CHAIR_LEG
               geometry DEF SIZE_MIDDLE Box {
                 size 0.1 0.01 0.4
               }
@@ -63,6 +59,25 @@ Solid {
       children [
         USE GROUP1
       ]
+    }
+    Transform {
+      translation -0.5 0.69 0.25
+      children [
+        Shape {
+          appearance USE COLOR_CHAIR_LEG
+          geometry Box {
+            size 1.1 0.01 0.1
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      endPoint Solid {
+        children [
+          Shape {
+          }
+        ]
+      }
     }
   ]
 }
