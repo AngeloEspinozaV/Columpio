@@ -2,12 +2,67 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6931032800836722 0.6931032800836722 0.1980295085953349 0.75
-  position 1.2 1.6 2.3
+  orientation -0.016621327639962925 -0.9910977771289408 -0.13209438912216262 2.8934557057564443
+  position -1.276694765301627 1.0000622630445666 -2.1773867706829133
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 Floor {
+}
+Solid {
+  children [
+    DEF GROUP1 Group {
+      children [
+        Transform {
+          translation 0 0.347 0
+          rotation 1 0 0 0.52
+          children [
+            Shape {
+              appearance DEF COLOR_CHAIR_LEG PBRAppearance {
+                baseColor 0.5333333333333333 0.5411764705882353 0.5215686274509804
+                roughness 1
+                metalness 0
+              }
+              geometry DEF SIZE_CHAIR_LEG Box {
+                size 0.1 0.8 0.001
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.347 0.4
+          rotation 1 0 0 -0.52
+          children [
+            Shape {
+              appearance USE COLOR_CHAIR_LEG
+              geometry USE SIZE_CHAIR_LEG
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.34 0.2
+          children [
+            Shape {
+              appearance DEF COLOR_MIDDLE PBRAppearance {
+                baseColor 0.5333333333333333 0.5411764705882353 0.5215686274509804
+                roughness 1
+                metalness 0
+              }
+              geometry DEF SIZE_MIDDLE Box {
+                size 0.1 0.01 0.4
+              }
+            }
+          ]
+        }
+      ]
+    }
+    Transform {
+      translation -1 0 0
+      children [
+        USE GROUP1
+      ]
+    }
+  ]
 }
